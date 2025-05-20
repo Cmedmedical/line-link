@@ -2,32 +2,68 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>เปิด LINE</title>
+  <title>เปิดใน LINE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: sans-serif;
       text-align: center;
-      padding: 50px;
+      background-color: #f8f8f8;
+      padding: 40px 20px;
+    }
+    h1 {
+      color: #222;
     }
     .btn {
-      font-size: 1.2rem;
-      padding: 12px 24px;
-      background-color: #00c300;
-      color: white;
-      border: none;
+      display: block;
+      margin: 20px auto;
+      padding: 14px 24px;
       border-radius: 8px;
+      font-size: 1.1rem;
       text-decoration: none;
+      color: white;
+      width: 90%;
+      max-width: 400px;
+      transition: 0.3s;
+    }
+    .btn-copy {
+      background-color: #888;
+    }
+    .btn-copy:hover {
+      background-color: #555;
+    }
+    .btn-open {
+      background-color: #00c300;
+    }
+    .btn-open:hover {
+      background-color: #009900;
+    }
+    .notice {
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>เปิดบัญชี LINE ของเรา</h1>
-  <p>กรุณากดปุ่มด้านล่างเพื่อเปิดในแอป LINE</p>
-  <a class="btn" href="https://line.me/R/ti/p/@cmed" target="_blank" rel="noopener">เปิดใน LINE</a>
-  <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">
-    หากไม่สามารถเปิดได้โดยตรง<br>กรุณาคัดลอกลิงก์แล้วเปิดในเบราว์เซอร์ภายนอก (เช่น Chrome)
+  <h1>เพิ่มเพื่อน LINE กับ CMED</h1>
+
+  <a class="btn btn-open" href="https://page.line.me/adm1611g?openQrModal=true" target="_blank">🌐 เปิดลิงก์ในเบราว์เซอร์</a>
+  <button class="btn btn-copy" onclick="copyLink()">📋 คัดลอกลิงก์ LINE</button>
+
+  <p class="notice">
+    หากเปิดจาก TikTok หรือแอปอื่น ให้กดปุ่ม "เปิดลิงก์ในเบราว์เซอร์" เพื่อให้สามารถเข้าถึงหน้า LINE ได้อย่างถูกต้อง
   </p>
-  <a href="googlechrome://cmedmedical.github.io/line-link/open-line.html">เปิดด้วย Chrome</a>
+
+  <script>
+    function copyLink() {
+      const link = "https://page.line.me/adm1611g?openQrModal=true";
+      navigator.clipboard.writeText(link).then(() => {
+        alert("คัดลอกลิงก์เรียบร้อยแล้ว!");
+      }, () => {
+        alert("ไม่สามารถคัดลอกลิงก์ได้ โปรดลองอีกครั้ง");
+      });
+    }
+  </script>
 </body>
 </html>
